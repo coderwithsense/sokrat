@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import os from 'os'
 import path from 'path'
 
-const readConfig = async () => {
+export const readConfig = async () => {
     try {
         const config = await fs.readFile(path.join(os.homedir(), '.hint-agent', 'config.json'), 'utf-8')
         if (!config) {
@@ -14,5 +14,3 @@ const readConfig = async () => {
         throw new Error('hint-agent not initialized. Run `hint init` first.')
     }
 }
-
-export default readConfig;

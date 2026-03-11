@@ -1,12 +1,13 @@
 import os from 'os'
 import path from 'path'
 import fs from 'fs/promises'
+import 'dotenv/config';
 
 export const runInit = async () => {
     const HINT_DIR_LOC = path.join(os.homedir(), '.hint-agent')
 
     const configFile = {
-        apiKey: process.env.GEMINI_API_KEY, model: 'model-blah', provider: 'gemini', hintLadderMax: 3, indexDepth: 3
+        apiKey: process.env.GEMINI_API_KEY || '', model: 'gemini-2.5-flash', provider: 'gemini', hintLadderMax: 3, indexDepth: 3
     }
     const profileFile = {
         concepts: {}, totalSessions: 0, createdAt: Date.now()

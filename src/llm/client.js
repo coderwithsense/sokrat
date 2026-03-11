@@ -8,7 +8,7 @@ const llm = async ({ system, user, schema }) => {
         const api = config.apiKey;
         const genAI = new GoogleGenerativeAI(api);
         const model = genAI.getGenerativeModel({
-                model: 'gemini-1.5-flash',
+                model: config.model,
                 generationConfig: {
                 responseMimeType: 'application/json',
                 responseSchema: schema
