@@ -1,6 +1,9 @@
 import { getSession, saveSession } from '../memory/session.js';
 import classifyIntent from '../agents/intake.js';
 import { generateHint } from '../agents/hintArchitect.js';
+import { render } from 'ink';
+import { HintUI } from '../renderer/components/HintUI.js';
+import React from 'react';
 
 export const startSession = async (query, options) => {
     const currSession = await getSession();
@@ -13,6 +16,5 @@ export const startSession = async (query, options) => {
             hint.text
         ]
     });
-    console.log(intent);
-    console.log(hint);
+    render(React.createElement(HintUI, { hint, intent }))
 }
