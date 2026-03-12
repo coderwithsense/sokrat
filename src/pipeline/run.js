@@ -17,9 +17,6 @@ export const startSession = async (query, options) => {
             hint.text
         ]
     });
-    updateProfile({
-        intent: intent, 
-        hint: hint
-    }).catch(() => { })
+    updateProfile(intent, hint).catch(() => { })
     render(React.createElement(HintUI, { hint, intent }))
 }
