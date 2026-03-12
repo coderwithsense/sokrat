@@ -1,6 +1,6 @@
 {
   "name": "sokrat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Socratic coding mentor CLI — hints only, never answers",
   "type": "module",
   "bin": {
