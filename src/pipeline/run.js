@@ -4,6 +4,7 @@ import { generateHint } from '../agents/hintArchitect.js';
 import { render } from 'ink';
 import { HintUI } from '../renderer/components/HintUI.js';
 import React from 'react';
+import updateProfile from '../agents/learnerProfile.js';
 
 export const startSession = async (query, options) => {
     const currSession = await getSession();
@@ -16,5 +17,9 @@ export const startSession = async (query, options) => {
             hint.text
         ]
     });
+    updateProfile({
+        intent: intent, 
+        hint: hint
+    }).catch(() => { })
     render(React.createElement(HintUI, { hint, intent }))
 }
