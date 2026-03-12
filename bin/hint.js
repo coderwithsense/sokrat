@@ -32,8 +32,8 @@ program
     .command('profile')
     .description('Get profile and result everything about it')
     .action(async () => {
-        const {profile} = await import('../src/pipeline/profile.js')
-        await profile();
+        const {showProfile} = await import('../src/pipeline/profile.js')
+        await showProfile();
     })
 
 program

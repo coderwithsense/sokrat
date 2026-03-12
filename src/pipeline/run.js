@@ -5,6 +5,7 @@ import { render } from 'ink';
 import { HintUI } from '../renderer/components/HintUI.js';
 import React from 'react';
 import updateProfile from '../agents/learnerProfile.js';
+import { ProfileUI } from '../renderer/components/ProfileUI.js';
 
 export const startSession = async (query, options) => {
     const currSession = await getSession();
