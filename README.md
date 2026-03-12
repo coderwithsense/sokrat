@@ -4,17 +4,17 @@
 
 ## Install
 ```bash
-npm install -g hint-agent
-hint init
+npm install -g sokrat
+sokrat init
 ```
 
 ## Usage
 ```bash
-hint "why is my useEffect running every render"
-hint "explain this error: cannot read properties of undefined"
-hint --level 2 "how does event delegation work"
-hint profile   # view your concept mastery
-hint reset     # clear session memory
+sokrat "why is my useEffect running every render"
+sokrat "explain this error: cannot read properties of undefined"
+sokrat --level 2 "how does event delegation work"
+sokrat profile   # view your concept mastery
+sokrat reset     # clear session memory
 ```
 
 ## How it works
@@ -23,7 +23,7 @@ and generates the minimal nudge you need — never the solution.
 Ask for the next hint level when you're still stuck.
 
 ## Config
-Set your API key after running `hint init`:
+Set your API key after running `sokrat init`:
 ```
 ~/.hint-agent/config.json
 ```

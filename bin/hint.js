@@ -7,8 +7,8 @@ import pkg from "../package.json" assert {type: 'json'}
 // import reset from "../src/pipeline/reset.js"
 
 program
-    .name('hint')
-    .description('...')
+    .name('sokrat')
+    .description('Socratic coding mentor CLI')
     .version(pkg.version)
 
 program
