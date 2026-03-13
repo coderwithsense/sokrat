@@ -4,7 +4,7 @@
   "description": "Socratic coding mentor CLI — hints only, never answers",
   "type": "module",
   "bin": {
-    "sokrat": "./bin/hint.js"
+    "sokrat": "./bin/sokrat.js"
   },
   "scripts": {
     "dev": "node bin/hint.js",
