@@ -3,6 +3,9 @@ import { saveProject } from '../memory/projects.js';
 import { autoCommitStep } from '../tools/git.js';
 import path from 'path';
 import os from 'os';
+import llm from '../llm/client.js'
+import { validatorPrompt } from '../llm/prompts/validator.prompt.js';
+import { validatorSchema } from '../llm/prompts/validator.schema.js';
 
 const validateStep = async (project, stepIndex) => {
     const step = project.parsedMeta.steps[stepIndex];
@@ -13,11 +16,11 @@ const validateStep = async (project, stepIndex) => {
         checkContent += `This is the file ${filePath}: ${content}. `
     }
     // Call llm to check the content todo validator schema and prompting
-    // const result = await llm({
-    //     ...validatorPrompt({ step, checkContent }),
-    //     schema: validatorSchema
-    // })
-    const result = {passed: true}
+    const result = await llm({
+        ...validatorPrompt({ step, checkContent }),
+        schema: validatorSchema
+    })
+    // const result = {passed: true}
     if (result.passed) {
         project.parsedMeta.steps[stepIndex].completed = true;
         await saveProject(project.parsedMeta.projectName, project.parsedMeta);
