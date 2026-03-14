@@ -9,6 +9,7 @@ const createProject = async (name) => {
         await fs.mkdir(`${os.homedir()}/.sokrat/projects/${name}`, {recursive: true});
         await fs.writeFile(path.join(projectPath, 'progress.json'), JSON.stringify({}));
         await fs.writeFile(path.join(projectPath, 'meta.json'), JSON.stringify({}));
+        return projectPath;
     } catch (e) {
         throw new Error(`Failed to create project ${name}: ${e.message}.`)
     }
