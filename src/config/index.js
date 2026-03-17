@@ -14,3 +14,10 @@ export const readConfig = async () => {
         throw new Error(`sokrat not initialized. Run 'sokrat start' first.`)
     }
 }
+
+export const writeConfig = async (config) => {
+    await fs.writeFile(
+        path.join(os.homedir(), '.sokrat', 'config.json'),
+        JSON.stringify(config, null, 2)
+    );
+}

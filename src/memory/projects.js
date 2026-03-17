@@ -1,7 +1,7 @@
 import os from 'os';
 import fs from 'fs/promises';
 import path from 'path';
-import { readConfig } from '../config/index.js'
+import { readConfig, writeConfig } from '../config/index.js'
 
 const createProject = async (name) => {
     try {
@@ -59,4 +59,10 @@ const getActiveProject = async () => {
     return await getProject(activeProject);
 }
 
-export { createProject, getActiveProject, getProject, listProjects, saveProgress, saveProject };
+const setActiveProject = async (name) => {
+    const config = await readConfig();
+    config.activeProject = name;
+    await writeConfig(config);
+}
+
+export { createProject, getActiveProject, getProject, listProjects, saveProgress, saveProject, setActiveProject };
