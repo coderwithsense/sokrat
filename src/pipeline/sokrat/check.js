@@ -1,5 +1,8 @@
 import { getActiveProject } from '../../memory/projects.js'
 import validateStep from '../../agents/validator.js';
+import { render } from 'ink';
+import React from 'react';
+import { ValidationUI } from '../../renderer/components/ValidationUI.js';
 
 const run = async () => {
     const currentProject = await getActiveProject();
@@ -9,7 +12,7 @@ const run = async () => {
         return;
     }
     const results = await validateStep(currentProject, currentStepIndex);
-    console.log(results);
+    render(React.createElement(ValidationUI, { result: results }));
 }
 
 export default run;

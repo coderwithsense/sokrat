@@ -1,13 +1,11 @@
 import { listProjects } from "../../memory/projects.js";
+import { render } from 'ink';
+import React from 'react';
+import { ProjectsUI } from '../../renderer/components/ProjectsUI.js';
 
 const run = async () => {
     const projects = await listProjects();
-    for (const project of projects) {
-        const { steps, projectName, title } = project.parsedMeta;
-        const currentStep = steps.findIndex(step => !step.completed);
-        const totalSteps = steps.length;
-        console.log(`${projectName}: ${title} — step ${currentStep + 1}/${totalSteps}`);
-    }
+    render(React.createElement(ProjectsUI, { projects }));
 }
 
 export default run;

@@ -1,4 +1,7 @@
 import { getActiveProject } from '../../memory/projects.js';
+import { render } from 'ink';
+import React from 'react';
+import { StepUI } from '../../renderer/components/StepUI.js';
 
 const run = async () => {
     const currentProject = await getActiveProject();
@@ -8,10 +11,7 @@ const run = async () => {
         return;
     }
     const { step, title, goal, filesToCreate, hints } = currentProject.parsedMeta.steps[currentStepIndex];
-    console.log(`Step ${step}: ${title}`);
-    console.log(`Goal: ${goal}`);
-    console.log(`Files to create: ${filesToCreate.join(', ')}`);
-    console.log(`Hint: ${hints[0]}`);
+    render(React.createElement(StepUI, { step: currentProject.parsedMeta.steps[currentStepIndex] }));
 }
 
 export default run;
