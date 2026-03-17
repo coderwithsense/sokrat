@@ -9,4 +9,3 @@ export const run = async () => {
     await openInEditor(projectPath);
 }
 
-export default run;

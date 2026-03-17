@@ -2,7 +2,7 @@ import { listProjects, setActiveProject } from "../../memory/projects.js"
 import { select } from '@inquirer/prompts';
 import showStep from './step.js';
 
-const run = async (name) => {
+export const run = async (name) => {
     if (name) {
         await setActiveProject(name);
     }
@@ -17,5 +17,3 @@ const run = async (name) => {
     }
     await showStep();
 }
-
-export default run;

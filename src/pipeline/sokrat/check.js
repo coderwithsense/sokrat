@@ -4,7 +4,7 @@ import { render } from 'ink';
 import React from 'react';
 import { ValidationUI } from '../../renderer/components/ValidationUI.js';
 
-const run = async () => {
+export const run = async () => {
     const currentProject = await getActiveProject();
     const currentStepIndex = currentProject.parsedMeta.steps.findIndex(step => !step.completed);
     if (currentStepIndex === -1) {
@@ -14,5 +14,3 @@ const run = async () => {
     const results = await validateStep(currentProject, currentStepIndex);
     render(React.createElement(ValidationUI, { result: results }));
 }
-
-export default run;

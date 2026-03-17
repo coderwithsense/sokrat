@@ -9,5 +9,3 @@ export const run = async () => {
         console.log(`${status} Step ${step.step}: ${step.title}`);
     });
 }
-
-export default run;

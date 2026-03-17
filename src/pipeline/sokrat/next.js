@@ -12,4 +12,3 @@ export const run = async () => {
     console.log(`Step ${stepIndex + 1} skipped, moving to step ${stepIndex + 2}`);
 }
 
-export default run;

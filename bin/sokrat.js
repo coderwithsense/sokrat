@@ -54,7 +54,7 @@ program
     .argument('[question]')
     .description('Get a Socratic nudge on your current step, or ask anything')
     .action(async (argument) => {
-        const { run } = await import('../src/pipeline/sokrat/getHint.js')
+        const { run } = await import('../src/pipeline/sokrat/hint.js')
         await run(argument);
     })
 
@@ -62,7 +62,7 @@ program
     .argument('[question]')
     .description('Get a Socratic nudge on your current step, or ask anything')
     .action(async (question) => {
-        const { run } = await import('../src/pipeline/sokrat/getHint.js')
+        const { run } = await import('../src/pipeline/sokrat/hint.js')
         await run(question);
     })
 

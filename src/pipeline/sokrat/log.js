@@ -12,5 +12,3 @@ export const run = async () => {
     const logs = await gitLog(projectPath);
     render(React.createElement(LogUI, { logs }));
 }
-
-export default run;

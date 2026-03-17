@@ -3,7 +3,7 @@ import { render } from 'ink';
 import React from 'react';
 import { StepUI } from '../../renderer/components/StepUI.js';
 
-const run = async () => {
+export const run = async () => {
     const currentProject = await getActiveProject();
     const currentStepIndex = currentProject.parsedMeta.steps.findIndex(step => !step.completed);
     if (currentStepIndex === -1) {
@@ -13,5 +13,3 @@ const run = async () => {
     const { step, title, goal, filesToCreate, hints } = currentProject.parsedMeta.steps[currentStepIndex];
     render(React.createElement(StepUI, { step: currentProject.parsedMeta.steps[currentStepIndex] }));
 }
-
-export default run;
