@@ -1,13 +1,13 @@
 {
   "name": "sokrat",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Socratic coding mentor CLI — hints only, never answers",
   "type": "module",
   "bin": {
     "sokrat": "./bin/sokrat.js"
   },
   "scripts": {
-    "dev": "node bin/hint.js",
+    "dev": "node bin/sokrat.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "dependencies": {
@@ -34,7 +34,19 @@
     "coding",
     "learning",
     "socratic",
-    "hints"
+    "hints",
+    "mentor",
+    "education",
+    "gemini",
+    "llm",
+    "developer-tools",
+    "code-review",
+    "blockchain",
+    "solidity",
+    "react",
+    "terminal",
+    "learn-to-code",
+    "anti-vibe-coding"
   ],
   "license": "MIT"
 }

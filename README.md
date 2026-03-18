@@ -202,7 +202,7 @@ $ sokrat log
 
  📜 Learning Timeline
  ──────────────────────────────
- 2 mins ago  sokrat: step 1 complete — Setting Up Your First React App
+ 19/3/2026  sokrat: step 1 complete — Setting Up Your First React App
 ```
 
 ---
@@ -221,15 +221,38 @@ $ sokrat log
 
 ## Roadmap
 
-- [ ] Persistent session mode (stay-alive CLI like Claude Code)
-- [ ] `sokrat config` — interactive config editor
+sokrat is being actively developed. Here's what's coming:
+
+**v1.1 — UX & Flow**
+- [ ] Persistent session mode — stay-alive CLI, no more typing `sokrat` before every command
+- [ ] Loader animations during LLM generation
+- [ ] Auto-open editor on `sokrat start` and `sokrat continue`
+- [ ] Show next step automatically after a passing `sokrat check`
+- [ ] `sokrat config` — interactive config editor, no more manual JSON editing
+- [ ] Landing screen — `sokrat` with no args shows active project and quick actions
+- [ ] Scaffold choice on start — auto-generate project structure or build it yourself
+
+**v1.2 — Intelligence**
+- [ ] Progressive hint levels — sokrat remembers you saw level 1 and escalates automatically
+- [ ] Skills/context files — track what you've learned across projects, inform future hints
+- [ ] `sokrat undo` — revert a falsely passed step
+- [ ] Resume context on recheck — LLM remembers what it said in previous failed attempts
 - [ ] LLM usage and cost tracking per session
-- [ ] Loader animations during generation
-- [ ] DEBUG mode for development
-- [ ] Skills/context files — track what you've learned across projects
-- [ ] Scaffold choice on start — auto-scaffold or manual
-- [ ] Multi-provider support (OpenAI, Anthropic)
+
+**v1.3 — Security & Reliability**
+- [ ] API key stored in system keychain via `keytar` (not plaintext config)
+- [ ] `sokrat doctor` — checks dependencies, API key validity, folder permissions
+- [ ] Graceful LLM error handling and offline fallback messages
+- [ ] Path sanitization to prevent directory traversal on project names
+- [ ] Config validation on startup with readable error messages
+
+**v2.0 — Platform**
+- [ ] Multi-provider support (OpenAI, Anthropic, local models via Ollama)
+- [ ] `sokrat export` — generate a PDF or markdown summary of your learning history
+- [ ] `sokrat share` — shareable gist of your learning timeline
+- [ ] `sokrat delete <name>` — remove a project cleanly
 - [ ] Web dashboard for learning progress
+- [ ] DEBUG mode — `DEBUG=true sokrat` for full stack traces in development
 
 ---
 
