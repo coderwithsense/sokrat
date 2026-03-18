@@ -25,7 +25,8 @@ export const run = async (question) => {
     const hint = await generateHint({
         query: question,
         intent: intent,
-        level: 1
+        level: 1,
+        stepContext
     });
     // save session, update profile, render result
     await saveSession({ ...session, hints: [...session.hints, hint.text] });

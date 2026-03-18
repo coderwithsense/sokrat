@@ -6,10 +6,11 @@ import { readConfig, writeConfig } from '../config/index.js'
 const createProject = async (name) => {
     try {
         const projectPath = `${os.homedir()}/.sokrat/projects/${name}`;
-        await fs.mkdir(`${os.homedir()}/.sokrat/projects/${name}`, {recursive: true});
+        await fs.mkdir(`${os.homedir()}/.sokrat/projects/${name}`, { recursive: true });
+        await fs.mkdir(path.join(os.homedir(), 'sokrat-projects', name), { recursive: true });
         await fs.writeFile(path.join(projectPath, 'progress.json'), JSON.stringify({}));
         await fs.writeFile(path.join(projectPath, 'meta.json'), JSON.stringify({}));
-        return projectPath;
+        return path.join(os.homedir(), 'sokrat-projects', name);
     } catch (e) {
         throw new Error(`Failed to create project ${name}: ${e.message}.`)
     }

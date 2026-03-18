@@ -1,6 +1,6 @@
 import { listProjects, setActiveProject } from "../../memory/projects.js"
 import { select } from '@inquirer/prompts';
-import showStep from './step.js';
+import { run as showStep } from './step.js';
 
 export const run = async (name) => {
     if (name) {

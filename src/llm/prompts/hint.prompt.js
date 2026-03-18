@@ -1,4 +1,4 @@
-export const hintPrompt = ({ query, intent, level }) => {
+export const hintPrompt = ({ query, intent, level, stepContext }) => {
     const system = `You are a Socratic coding mentor. You give hints only, never solutions.
 Rules:
 - Never write working code that solves the problem
@@ -10,8 +10,9 @@ Rules:
 - Set containsSolution to true if you think your hint is too direct`
 
     const user = `Query: "${query}"
-Intent: ${intent.type} | Domain: ${intent.domain}
-Hint level: ${level}`
+    Intent: ${intent.type} | Domain: ${intent.domain}
+    Hint level: ${level}
+    ${stepContext ? `Current step: ${stepContext.title}\nGoal: ${stepContext.goal}` : ''}`
 
     return { system, user }
 }

@@ -12,7 +12,7 @@ const validateStep = async (project, stepIndex) => {
     const projectPath = path.join(os.homedir(), 'sokrat-projects', project.parsedMeta.projectName);
     let checkContent = ""
     for (const filePath of step.filesToCreate) {
-        const content = await readFile(filePath)
+        const content = await readFile(project.parsedMeta.projectName, filePath)
         checkContent += `This is the file ${filePath}: ${content}. `
     }
     // Call llm to check the content todo validator schema and prompting

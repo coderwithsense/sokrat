@@ -8,7 +8,7 @@ export const LogUI = ({ logs }) => {
         React.createElement(Text, { color: 'gray', dimColor: true }, '── ──────────────────'),
         ...logs.map((commit, i) =>
             React.createElement(Box, { key: i, gap: 2 },
-                React.createElement(Text, { color: 'gray', dimColor: true }, commit.date),
+                React.createElement(Text, { color: 'gray', dimColor: true }, new Date(commit.date).toLocaleDateString()),
                 React.createElement(Text, { color: 'white' }, commit.message)
             )
         )
